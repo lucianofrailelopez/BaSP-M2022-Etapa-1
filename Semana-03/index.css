@@ -1,0 +1,176 @@
+header {
+    height: 80px;
+}
+
+.div-seeker {
+    width: 300px;
+    height: 80px;
+    float: left;
+    background-color: #EBEBEB;
+}
+
+.div-seeker input {
+    width: 190px;
+    height: 20px;
+    position: relative;
+    top: 30px;
+    left: 55px;
+}
+
+.div-title {
+    width: 1140px;
+    height: 80px;
+    float: right;
+}
+
+.div-title h1 {
+    display: inline-block;
+    position: relative;
+    top: 14px;
+    left: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: #373867;
+}
+
+.div-title img {
+    width: 60px;
+    height: 65px;
+    float: right;
+    position: relative;
+    top: 7px;
+    right: 15px;
+}
+
+aside {
+    float: left;
+    width: 300px;
+    height: 800px;
+    background-color: #DCDADA;
+}
+
+.div-menu {
+    height: 321px;
+}
+
+.label-menu {
+    position: relative;
+    left: 20px; 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 75px;
+    border-bottom: 3px solid #AACE9B;
+}
+
+.div-checkin {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #AACE9B;
+}
+
+.div-checkin a {
+    text-decoration: none;
+    color: black;
+}
+
+.first-label, .second-label, .third-label {
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 47px;
+    position: relative;
+    left: 30px;
+}
+
+.div-information {
+    border-bottom: 3px solid #AACE9B;
+}
+
+.div-information label{
+    position: relative;
+    left: 22px;
+    font-family: 'Roboto Slab';
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 47px;
+}
+
+.text-information {
+    position: relative;
+    left: 10px;
+    margin: 15px;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 32px;
+    color: #9A9999;
+}
+
+.div-mail {
+    margin-bottom: 5px;
+    height: 30px;
+    border-bottom: 3px solid #AACE9B;
+}
+
+.div-mail img {
+    float: left;
+    position: relative;
+    left: 25px;
+    width: 30px;
+    height: 20px;
+}
+
+.div-mail a {
+    float: right;
+    position: relative;
+    right: 55px;
+    text-decoration: none;
+    font-family: 'Roboto Slab';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: black;
+}
+
+.div-tel {
+    margin-bottom: 5px;
+    height: 40px;
+    border-bottom: 3px solid #AACE9B;
+}
+
+.div-tel label {
+    position: relative;
+    top: 6px;
+    left: 27px;
+    font-family: 'Roboto Slab';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.div-direction {
+    height: 60px;
+    border-bottom: 3px solid #AACE9B;
+}
+
+.div-direction img {
+    float: left;
+    position: relative;
+    left: 25px;
+    width: 30px;
+    height: 30px;
+}
+
+.div-direction label {
+    position: relative;
+    top: 5px;
+    left: 33px;
+    font-family: 'Roboto Slab';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
