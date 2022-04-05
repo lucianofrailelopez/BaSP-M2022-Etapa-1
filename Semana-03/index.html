@@ -10,9 +10,6 @@
 </head>
 <body>
 <header>
-    <form class="div-seeker">
-        <input type="search" placeholder="search">
-    </form>
     <div class="div-title">
         <h1>Trackgenix</h1>
         <img src="./images/logo-radium.png">
@@ -20,6 +17,9 @@
 </header>
 <aside>
     <div class="div-menu">
+        <form class="div-seeker">
+            <input type="search" placeholder="search">
+        </form>
         <label class="label-menu">Menu</label>
         <div class="div-checkin">
             <label class="first-label"><a href="#">Home</a></label>
@@ -31,7 +31,7 @@
             <label class="third-label"><a href="#">Log In</a></label>
         </div>
     </div>
-    <div>
+    <div class="contact">
         <div class="div-information">
             <label>Información de contacto</label>
         </div>
@@ -77,71 +77,113 @@
     </div>
     <div class="div-options">
         <div class="options">
-            <label class="options-first"><a href="#">Hours log</a></label>
-            <label class="options-second"><a href="#">Resource management</a></label>
+            <div class="options-first">
+                <span>o</span>
+                <a href="#">Hours log</a>
+            </div>
+            <div class="options-second">
+                <span>o</span>
+                <a href="#">Resource management</a>
+            </div>
         </div>
         <div class="second-options">
-            <label class="options-first"><a href="#">Reports</a></label>
-            <label class="options-second"><a href="#">Multiple roles</a></label>
+            <div class="options-first">
+                <span>o</span>
+                <a href="#">Reports</a>
+            </div>
+            <div class="options-second">
+                <span>o</span>
+                <a href="#">Multiple roles</a>
+            </div>
         </div>
     </div>
 </section>
 <section>
-    <h2>Why use Trackgenix?</h2>
-    <h4>Productivity booster</h4>
-    <p>
-        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. 
-        Proin aliquam facilisis ante interdum.
-        Sed nulla amet lorem feugiat tempus aliquam.
-    </p>
-    <h4>Work traceability</h4>
-    <p>
-        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
-        Proin aliquam facilisis ante interdum.
-        Sed nulla amet lorem feugiat tempus aliquam.
-    </p>
-    <h4>Leadership and team management</h4>
-    <p>
-        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
-        Proin aliquam facilisis ante interdum.
-        Sed nulla amet lorem feugiat tempus aliquam.
-    </p>
-    <h4>Decision making</h4>
-    <p>
-        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
-        Proin aliquam facilisis ante interdum. 
-        Sed nulla amet lorem feugiat tempus aliquam.
-    </p>
+    <div class="div-why">
+        <h2>Why use Trackgenix?</h2>
+    </div>
+    <div class="information-use">
+        <div class="firts-information">
+            <h4>Productivity booster</h4>
+            <p>
+                Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. 
+                Proin aliquam facilisis ante interdum.
+                Sed nulla amet lorem feugiat tempus aliquam.
+            </p>
+        </div>
+        <div class="second-information">
+            <h4>Work traceability</h4>
+            <p>
+            Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+            Proin aliquam facilisis ante interdum.
+            Sed nulla amet lorem feugiat tempus aliquam.
+            </p>
+        </div>
+    </div>
+    <div class="second-use">
+        <div class="firts-information">
+            <h4>Leadership and team management</h4>
+            <p>
+                Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+                Proin aliquam facilisis ante interdum.
+                Sed nulla amet lorem feugiat tempus aliquam.
+            </p>
+        </div>
+        <div class="second-information">
+            <h4>Decision making</h4>
+            <p>
+                Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+                Proin aliquam facilisis ante interdum. 
+                Sed nulla amet lorem feugiat tempus aliquam.
+            </p>
+        </div>
+    </div>
 </section>
 <article>
-    <form>
+    <form class="two-form">
         <h2>Form</h2>
-        <label for="nombre">Nombre</label>
-        <input name="nombre" type="text" placeholder="Nombre">
-        <label for="email">Email</label>
-        <input name="email" type="email" placeholder="Email">
-        <h4>Contact area:</h4>
-        <ul>
-            <li>
-                <input name="first" type="checkbox">
-                <label for="first">Human Resources</label>
-            </li>
-            <li>
-                <input name="second" type="checkbox">
-                <label for="second">Systems</label>
-            </li>
-            <li>
-                <input name="third" type="checkbox">
-                <label for="third">Commercialization</label>
-            </li>
-        </ul>
-        <label for="message">Message</label>
-        <textarea name="message"></textarea>
-        <input type="submit">
-        <input type="reset">
+        <div class="first-form">
+            <div class="second-form">
+                <input name="nombre" type="text" placeholder="Nombre">
+            </div>
+            <div class="second-form">
+                <input name="email" type="email" placeholder="Email">
+            </div>
+            <div class="second-form">
+                <h4>Contact area:</h4>
+                <ul>
+                    <li>
+                        <input name="first" type="checkbox">
+                        <label for="first">Human Resources</label>
+                    </li>
+                    <li>
+                        <input name="second" type="checkbox">
+                        <label for="second">Systems</label>
+                    </li>
+                    <li>
+                        <input name="third" type="checkbox">
+                        <label for="third">Commercialization</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="fifth-form">
+            <div class="sixth-form">
+                <div>
+                    <label for="message">Message</label>
+                </div>
+                <textarea name="message"></textarea>
+            </div>
+            <div class="seventh-form">
+                <input type="submit">
+                <input type="reset">
+            </div>
+        </div>
     </form>
-    <div>
-        <h2>History</h2>
+    <div class="div-why">
+        <h2 class="history">History</h2>
+    </div>
+    <div class="history-first">
         <p>
             Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
             Vestibulum ante ipsum primis in faucibus vestibulum.
@@ -151,7 +193,7 @@
         </p>
         <img src="./images/history-img.png" width="400" height="300">
     </div>
-    <div>
+    <div class="history-second">
         <p>
             Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
             Vestibulum ante ipsum primis in faucibus vestibulum.
@@ -163,34 +205,36 @@
 </article>
 </main>
 <footer>
-    <div> 
-        <ol>
-            <h4>Products</h4>
-            <li><a href="#">Functionalities</a></li>
-            <li><a href="#">Downloads</a></li>
-            <li><a href="#">Integrations</a></li>
-            <li><a href="#">Extras</a></li>
-        </ol>
+    <div class="div-data">
+        <div class="div-products"> 
+            <ol>
+                <h4>Products</h4>
+                <li><a href="#">Functionalities</a></li>
+                <li><a href="#">Downloads</a></li>
+                <li><a href="#">Integrations</a></li>
+                <li><a href="#">Extras</a></li>
+            </ol>
+        </div>
+        <div class="div-company">
+            <ol>
+                <h4>Company</h4>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Blog</a></li>
+            </ol>
+        </div>
+        <div class="div-support">
+            <ol>
+                <h4>Support</h4>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">API</a></li>
+                <li><a href="#">Contact</a></li>
+            </ol>
+        </div>
     </div>
-    <div>
-        <ol>
-            <h4>Company</h4>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Clients</a></li>
-            <li><a href="#">Resources</a></li>
-            <li><a href="#">Blog</a></li>
-        </ol>
-    </div>
-    <div>
-        <ol>
-            <h4>Support</h4>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Tutorials</a></li>
-            <li><a href="#">API</a></li>
-            <li><a href="#">Contact</a></li>
-        </ol>
-    </div>
-    <span>
+    <span class="logo">
         <a href="https://www.instagram.com/"><img src="./images/logo-instagram.png" width="30" height="30"></a>
         <a href="https://twitter.com/"><img src="./images/logo-twitter.png" width="30" height="30"></a>
         <a href="https://es-la.facebook.com/"><img src="./images/logo-facebook.png" width="30" height="30"></a>
@@ -198,10 +242,14 @@
         <a href="https://github.com/"><img src="./images/logo-github.png" width="30" height="30"></a>
     </span>
     <br>
-    <img src="./images/logo-radium.png" width="100" height="100">
+    <img src="./images/logo-radium.png" class="logo-radium" width="100" height="100">
     <div>
-        <h6>Rosario, Argentina</h6>
-        <h6>Copyright © 2022 Radium Rocket. All rights reserved.</h6>
+        <div class="derechos">
+            <h6>Rosario, Argentina</h6>
+        </div>
+        <div class="derechos-second">
+            <h6>Copyright © 2022 Radium Rocket. All rights reserved.</h6>
+        </div>
     </div>
 </footer>
 </body>
