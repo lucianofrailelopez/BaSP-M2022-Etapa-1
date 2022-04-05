@@ -1,3 +1,17 @@
+# Become a Software Professional 2022
+
+# Week 01
+
+The objective of week 1 was to create a screenflow using Figma.
+
+# Week 02
+
+The objective of week 2 was to recreate the landing page of week 1 using HTML.
+
+# Week 03
+
+The objective of this week is to add style to our HTML project using CSS in order to make our page look as similar as possible to the landing page from week 1.
+
 # Trackgenix
 
 Trackgenix is a web system that allows the registration of hours worked according to employee and project.
