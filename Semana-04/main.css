@@ -34,3 +34,40 @@ main section, main article {
      width: 100%;
      height: 280px;
  }
+
+ @media screen and (min-width: 768px) {
+     .parent-container {
+         display: flex;
+     }
+
+     .parent-container p {
+         line-height: 26px;
+     }
+
+     .information-use {
+         display: flex;
+     }
+
+     .first-history {
+         display: flex;
+         flex-direction: row-reverse;
+         margin-bottom: 10px;
+     }
+
+     .last-history {
+         display: flex;
+         margin-bottom: 10px;
+     }
+
+     .first-history p, .last-history p {
+         font-size: 15px;
+         line-height: 20px;
+         margin-left: 10px;
+     }
+
+     .first-history img, .last-history img {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 10px;
+     }
+ }
