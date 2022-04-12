@@ -36,7 +36,11 @@ main section, main article {
  }
 
  @media screen and (min-width: 481px) {
-     .parent-container {
+    main section div {
+        margin-left: 30px;
+    }
+    
+    .parent-container {
          display: flex;
      }
 
@@ -52,6 +56,10 @@ main section, main article {
 
      .first-information, .last-information {
          margin-bottom: 10px;
+     }
+
+     .first-registration {
+         margin-left: 40px;
      }
 
      .first-history {
@@ -82,5 +90,13 @@ main section, main article {
     main {
         float: right;
         width: 75%;
+    }
+
+    main section div {
+        margin-left: 30px;
+    }
+
+    .first-registration {
+        margin-left: 40px;
     }
 }
