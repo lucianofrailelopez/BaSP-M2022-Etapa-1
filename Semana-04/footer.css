@@ -6,7 +6,7 @@ footer {
 }
 
 .data {
-    width: 81%;
+    width: 100%;
 }
 
 .data ol {
@@ -14,9 +14,16 @@ footer {
     margin-bottom: 10px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 481px) {
     .container-data {
         display: flex;
         text-align: center;
+    }
+
+    .data {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-bottom: 20px;
     }
 }

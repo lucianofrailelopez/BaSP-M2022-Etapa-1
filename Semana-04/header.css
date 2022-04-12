@@ -2,7 +2,7 @@ header {
     width: 100%;
 }
 
-.div-title {
+.first-title {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -10,7 +10,7 @@ header {
     height: 60px;
 }
 
-.div-title img {
+.first-title img {
     width: 50px;
     height: 50px;
 }
