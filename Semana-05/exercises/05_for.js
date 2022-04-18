@@ -22,6 +22,8 @@ for (let i = 0; i < elementFut.length; i++) {
 bucle for para ir guardando cada palabra dentro de la variable sentence. Al final mostrar una única alerta con la 
 cadena completa. */
 
+console.log('Exercises 5.c: for');
+
 var sentence = '';
 
 for (let i = 0; i < elementFut.length; i++) {
@@ -29,3 +31,17 @@ for (let i = 0; i < elementFut.length; i++) {
 }
 
 alert(sentence);
+
+/*d) Crear una array vacío y con un bucle for de 10 repeticiones. Llenar el array con el número de la repetición,
+es decir que al final de la ejecución del bucle for debería haber 10 elementos dentro del array,
+desde el número 0 hasta al número 9. Mostrar por la consola del navegador el array final (utilizar console.log). */
+
+console.log('Exercises 5.d: for');
+
+var sentenceNum = [];
+
+for (let i = 0; i < 10; i++) {
+    sentenceNum[i] = i;
+}
+
+console.log(sentenceNum);
