@@ -49,3 +49,14 @@ console.log('Exercises 3.f: arrays');
 var joinElement = months.join('-');
 
 console.log(joinElement);
+
+// g) Crear una copia del array de meses que contenga desde Mayo hasta Noviembre (utilizar slice).
+
+console.log('Exercises 3.g: arrays');
+
+var copyMonths = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre',
+'Noviembre', 'Diciembre'];
+
+var sliceMonths = copyMonths.slice(4,11);
+
+console.log(sliceMonths);
