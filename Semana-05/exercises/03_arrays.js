@@ -41,3 +41,11 @@ console.log('Exercises 3.e: arrays');
 var reverseElement = months.reverse();
 
 console.log(reverseElement);
+
+// f) Unir todos los elementos del array en un único string donde cada mes este separado por un guión - (utilizar join).
+
+console.log('Exercises 3.f: arrays');
+
+var joinElement = months.join('-');
+
+console.log(joinElement);
