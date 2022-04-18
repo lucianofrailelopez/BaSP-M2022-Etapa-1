@@ -28,6 +28,6 @@ guardando el resultado de la suma en una 3er variable (utilizar length).*/
 
 console.log('Exercises 1.c: variables and operators');
 
-var stringlength = wordOne.length + wordTwo.length;
+var stringLength = wordOne.length + wordTwo.length;
 
-alert('1.c = ' + stringlength);
+alert('1.c = ' + stringLength);
