@@ -43,3 +43,17 @@ console.log('Exercises 2.e: string');
 var stringSpace = stringTen.indexOf(' ');
 
 alert('2.e = ' + stringSpace);
+
+/*f) Crear una variable de tipo string con al menos 2 palabras largas (10 caracteres y algún espacio entre medio).
+Utilizar los métodos de los ejercicios anteriores para generar un nuevo string que tenga la primera letra de ambas
+palabras en mayúscula y las demás letras en minúscula
+(utilizar indexOf, substring, toUpperCase, toLowerCase y el operador +).*/
+
+console.log('Exercises 2.f: string');
+
+var stringLong = 'experienced programmer';
+
+var editedString = stringLong.substring(0,1).toUpperCase() + stringLong.substring(1, stringLong.indexOf(' ')).toLowerCase()
++ stringLong.substring(stringLong.indexOf(' '),13).toUpperCase() + stringLong.substring(13,22).toLowerCase();
+
+alert('2.f = ' + editedString);
