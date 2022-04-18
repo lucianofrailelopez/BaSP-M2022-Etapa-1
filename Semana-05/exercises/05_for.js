@@ -17,3 +17,15 @@ console.log('Exercises 5.b: for');
 for (let i = 0; i < elementFut.length; i++) {
     alert(elementFut[i].substring(0,1).toUpperCase() + elementFut[i].substring(1).toLowerCase());
 }
+
+/*c) Crear una variable llamada “sentence” que tenga un string vacío, luego al array del punto a) recorrerlo con un 
+bucle for para ir guardando cada palabra dentro de la variable sentence. Al final mostrar una única alerta con la 
+cadena completa. */
+
+var sentence = '';
+
+for (let i = 0; i < elementFut.length; i++) {
+    sentence += elementFut[i];
+}
+
+alert(sentence);
