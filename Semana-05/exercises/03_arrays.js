@@ -23,3 +23,13 @@ var addElement_1 = meses.unshift('agua');
 var addElement_2 = meses.push('tomate');
 
 console.log(meses);
+
+// d) Quitar un elemento del principio y del final del array (utilizar shift y pop).
+
+console.log('Exercises 3.d: arrays');
+
+var removeElement_1 = meses.shift();
+
+var removeElement_2 = meses.pop();
+
+console.log(meses);
