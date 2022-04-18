@@ -13,3 +13,13 @@ console.log(meses[5], meses[11]);
 console.log('Exercises 3.b: arrays');
 
 console.log(meses.sort());
+
+// c) Agregar un elemento al principio y al final del array (utilizar unshift y push).
+
+console.log('Exercises 3.c: arrays');
+
+var addElement_1 = meses.unshift('agua');
+
+var addElement_2 = meses.push('tomate');
+
+console.log(meses);
