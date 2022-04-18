@@ -3,33 +3,41 @@
 
 console.log('Exercises 3.a: arrays');
 
-var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre',
+var months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre',
 'Noviembre', 'Diciembre'];
 
-console.log(meses[5], meses[11]);
+console.log(months[5], months[11]);
 
 // b) Ordenar el array de meses alfabéticamente y mostrarlo por consola (utilizar sort).
 
 console.log('Exercises 3.b: arrays');
 
-console.log(meses.sort());
+console.log(months.sort());
 
 // c) Agregar un elemento al principio y al final del array (utilizar unshift y push).
 
 console.log('Exercises 3.c: arrays');
 
-var addElement_1 = meses.unshift('agua');
+var addElement_1 = months.unshift('agua');
 
-var addElement_2 = meses.push('tomate');
+var addElement_2 = months.push('tomate');
 
-console.log(meses);
+console.log(months);
 
 // d) Quitar un elemento del principio y del final del array (utilizar shift y pop).
 
 console.log('Exercises 3.d: arrays');
 
-var removeElement_1 = meses.shift();
+var removeElement_1 = months.shift();
 
-var removeElement_2 = meses.pop();
+var removeElement_2 = months.pop();
 
-console.log(meses);
+console.log(months);
+
+// e) Invertir el orden del array (utilizar reverse).
+
+console.log('Exercises 3.e: arrays');
+
+var reverseElement = months.reverse();
+
+console.log(reverseElement);
