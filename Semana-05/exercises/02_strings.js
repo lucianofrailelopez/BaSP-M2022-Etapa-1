@@ -34,3 +34,12 @@ console.log('Exercises 2.d: string')
 var stringEx_d = stringTen.substring(0,1).toUpperCase() + stringTen.substring(2,13).toLowerCase();
 
 alert('2.d = ' + stringEx_d);
+
+/*e) Crear una variable de tipo string con al menos 10 caracteres y algún espacio en blanco.
+Encontrar la posición del primer espacio en blanco y guardarla en una variable (utilizar indexOf).*/
+
+console.log('Exercises 2.e: string');
+
+var stringSpace = stringTen.indexOf(' ');
+
+alert('2.e = ' + stringSpace);
