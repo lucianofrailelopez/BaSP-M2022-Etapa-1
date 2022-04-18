@@ -15,3 +15,12 @@ console.log('Exercises 2.b: string');
 var stringFive = stringTen.substring(0,5);
 
 alert('2.b = ' + stringFive);
+
+/*c) Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string con los últimos 3 caracteres
+guardando el resultado en una nueva variable (utilizar substring).*/
+
+console.log('Exercises 2.c: string');
+
+var stringThree = stringTen.substring(10,13);
+
+alert('2.c = ' + stringThree);
