@@ -32,3 +32,19 @@ function validation() {
 }
 
 validation();
+
+/*c) Crear una función validate integer que reciba un número como parámetro y devuelva verdadero si es un número entero. */
+
+console.log('Exercises 6.c: functions');
+
+var numInteger = 10;
+
+function validateinteger() {
+    if(Number.isInteger(numInteger)) {
+        console.log(true);
+    }else{
+        console.log(false);
+    }
+}
+
+validateinteger();
