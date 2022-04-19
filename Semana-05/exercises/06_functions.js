@@ -9,9 +9,26 @@ var num2 = 30;
 
 var result;
 
-function suma(params) {
+function suma() {
     result = num1 + num2;
     return console.log('6.a = ' + result);
 }
 
 suma();
+
+/*b) A la función suma anterior, agregarle una validación para controlar si alguno de los parámetros no es un número,
+mostrar una alerta aclarando que uno de los parámetros tiene error y retornar el valor NaN como resultado. */
+
+console.log('Exercises 6.b: functions');
+
+function validation() {
+    if(isNaN(num1) || isNaN(num2)) {
+        alert('It is not a number');
+        return console.log(NaN);
+    }else{
+        result = num1 + num2;
+        return console.log('6.b = ' + result);
+    }
+}
+
+validation();
