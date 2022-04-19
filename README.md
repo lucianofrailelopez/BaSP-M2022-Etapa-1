@@ -12,6 +12,14 @@ The objective of week 2 was to recreate the landing page of week 1 using HTML.
 
 The objective of this week is to add style to our HTML project using CSS in order to make our page look as similar as possible to the landing page from week 1.
 
+# Week 04
+
+the objective of this week was to produce a responsive page with what was already worked on in week 03.
+
+# Week 04
+
+the objective of the week was to acquire the knowledge of js and the resolution of multiple exercises.
+
 # Trackgenix
 
 Trackgenix is a web system that allows the registration of hours worked according to employee and project.
@@ -26,6 +34,10 @@ Trackgenix is a web system that allows the registration of hours worked accordin
 - You can sign in or sing up.
 
 <img width="768" alt="Captura de Pantalla 2022-03-29 a la(s) 15 38 24" src="https://user-images.githubusercontent.com/94138652/160681961-b8dd11c3-0f84-4e1e-890c-81ca552d4c7c.png">
+
+## Pages
+
+[https://lucianofrailelopez.github.io/BaSP-M2022-Etapa-1/Semana-04/](https://lucianofrailelopez.github.io/BaSP-M2022-Etapa-1/Semana-04/)
 
 ## Installation
 
