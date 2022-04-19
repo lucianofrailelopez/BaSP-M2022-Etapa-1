@@ -73,3 +73,31 @@ function validationNum(number1,number2) {
 }
 
 validationNum(num1, num2);
+
+/*e) Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función suma probando
+que todo siga funcionando igual. */
+
+console.log('Exercises 6.e: functions');
+
+function secondValidationNum(number1,number2) {
+    if(Number.isInteger(number1) && Number.isInteger(number2)) {
+        result = num1 + num2;
+        return console.log('6.d = ' + result);
+    }else if(Number.isInteger(number1) == false) {
+        alert('first number is not integer, it will become');
+        num1 = Math.round(number1);
+    }else if(Number.isInteger(number2) == false) {
+        alert('second number is not integer, it will become')
+        num2 = Math.round(number2);
+    }else {
+        alert('Both numbers are integers, they are going to be added');
+    }
+}
+
+function copySuma(number1, number2) {
+    secondValidationNum(number1,number2)
+    result = num1 + num2;
+    return console.log('6.e = ' + result);
+}
+
+copySuma(num1,num2);
