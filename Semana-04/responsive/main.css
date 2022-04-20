@@ -92,6 +92,10 @@ main section, main article {
         width: 75%;
     }
 
+    .icon-menu {
+        display: none;
+    }
+
     main section div {
         margin-left: 30px;
     }
