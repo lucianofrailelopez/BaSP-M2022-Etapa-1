@@ -1,0 +1,15 @@
+aside {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    aside {
+        display: flex;
+        flex-direction: column;
+        float: right;
+        position: fixed;
+        width: 25%;
+        height: 100%;
+        background-color: #DCDADA;
+    }
+ }
