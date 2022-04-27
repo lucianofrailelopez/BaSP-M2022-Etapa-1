@@ -10,8 +10,25 @@ var arraysNumbers = ["1","2","3","4","5","6","7","8","9","0"];
 var nameVerify;
 
 var lastNameVerify;
-//
 
+var dniVerify;
+
+var dateVerify;
+
+var telVerify;
+
+var addressVerify;
+
+var locationVerify;
+
+var codeVerify;
+
+var emailVerify;
+
+var passwordVerify;
+
+var passwordRepetVerify;
+//
 
 function validateName() {
     var name = document.getElementById('name').value;
@@ -38,10 +55,15 @@ function validateName() {
     if(name.length > 3 && letterCounter > 0 && numberCounter <= 0 && dividersCounter <= 0) {
         document.getElementById('name').classList.add('input-name-activo');
         document.querySelector('.name-green').style.display = "flex";
+        document.getElementById('name').classList.remove('input-namered-activo');
+        document.querySelector('.name-red').style.display = "none";
         nameVerify = true;
+        document.getElementById('name-datum').innerHTML=name;
     }else {
         document.getElementById('name').classList.add('input-namered-activo');
         document.querySelector('.name-red').style.display = "flex";
+        document.getElementById('name').classList.remove('input-name-activo');
+        document.querySelector('.name-green').style.display = "none";
         nameVerify = false;
     }
 }
@@ -74,6 +96,7 @@ function validateLastName() {
         document.getElementById('lastName').classList.remove('input-lastname-red');
         document.querySelector('.lastname-red').style.display = "none";
         lastNameVerify = true;
+        document.getElementById('lastname-datum').innerHTML=lastName;
     }else {
         document.getElementById('lastName').classList.add('input-lastname-red');
         document.querySelector('.lastname-red').style.display = "flex";
@@ -110,11 +133,14 @@ function validateDni() {
         document.querySelector(".dni-green").style.display = "flex";
         document.getElementById('dni').classList.remove("input-dni-red");
         document.querySelector(".dni-red").style.display = "none";
+        dniVerify = true;
+        document.getElementById('dni-datum').innerHTML=dni;
     }else {
         document.getElementById('dni').classList.add("input-dni-red");
         document.querySelector(".dni-red").style.display = "flex";
         document.getElementById('dni').classList.remove("input-dni-green");
         document.querySelector(".dni-green").style.display = "none";
+        dniVerify = false;
     }
 }
 
@@ -143,11 +169,14 @@ function validateDate() {
         document.querySelector(".date-red").style.display = "flex";
         document.getElementById('date').classList.remove("input-date-green");
         document.querySelector(".date-green").style.display = "none";
+        dateVerify = true;
+        document.getElementById('date-datum').innerHTML=date;
     }else{
         document.getElementById('date').classList.add("input-date-green");
         document.querySelector(".date-green").style.display = "flex";
         document.getElementById('date').classList.remove("input-date-red");
         document.querySelector(".date-red").style.display = "none";
+        dateVerify = true;
     }
 }
 
@@ -175,11 +204,14 @@ function validateTel() {
         document.querySelector(".tel-green").style.display = "flex";
         document.getElementById('tel').classList.remove("input-tel-red");
         document.querySelector(".tel-red").style.display = "none";
+        telVerify = true;
+        document.getElementById('tel-datum').innerHTML=tel;
     }else {
         document.getElementById('tel').classList.add("input-tel-red");
         document.querySelector(".tel-red").style.display = "flex";
         document.getElementById('tel').classList.remove("input-tel-green");
         document.querySelector(".tel-green").style.display = "none";
+        telVerify = false;
     }
 }
 
@@ -205,11 +237,14 @@ function validateAddress() {
         document.querySelector(".address-green").style.display = "flex";
         document.getElementById('address').classList.remove("input-address-red");
         document.querySelector(".address-red").style.display = "none";
+        addressVerify = true;
+        document.getElementById('address-datum').innerHTML=address;
     }else {
         document.getElementById('address').classList.add("input-address-red");
         document.querySelector(".address-red").style.display = "flex";
         document.getElementById('address').classList.remove("input-address-green");
         document.querySelector(".address-green").style.display = "none";
+        addressVerify = false;
     }
 }
 
@@ -239,11 +274,14 @@ function validateLocation() {
         document.querySelector(".location-green").style.display = "flex";
         document.getElementById('location').classList.remove("input-location-red");
         document.querySelector(".location-red").style.display = "none";
+        locationVerify = true;
+        document.getElementById('location-datum').innerHTML=location;
     }else {
         document.getElementById('location').classList.add("input-location-red");
         document.querySelector(".location-red").style.display = "flex";
         document.getElementById('location').classList.remove("input-location-green");
         document.querySelector(".location-green").style.display = "none";
+        locationVerify = false;
     }
 }
 
@@ -267,82 +305,89 @@ function validatePostalCode() {
         document.querySelector(".code-green").style.display = "flex";
         document.getElementById('code').classList.remove("input-code-red");
         document.querySelector(".code-red").style.display = "none";
+        codeVerify = true;
+        document.getElementById('code-datum').innerHTML=postalCode;
     }else {
         document.getElementById('code').classList.add("input-code-red");
         document.querySelector(".code-red").style.display = "flex";
         document.getElementById('code').classList.remove("input-code-green");
         document.querySelector(".code-green").style.display = "none";
+        codeVerify = false;
     }
 }
 
 function validateEmail() {
     var email = document.getElementById('mail').value;
     
-    var letterCounter8 = 0;
+    var letterCounter9 = 0;
 
-    var numberCounter8 = 0;
+    var numberCounter9 = 0;
 
-    var dividersCounter8 = 0;
+    var dividersCounter9 = 0;
     
     for (let i = 0; i < email.length; i++) {
        if(letters.includes(email[i])) {
-        letterCounter8++;
+        letterCounter9++;
        }else if(capitalLetters.includes(email[i])) {
-        letterCounter8++;
+        letterCounter9++;
        }else if(arraysNumbers.includes(email[i])) {
-        numberCounter8++;
+        numberCounter9++;
        }else if(dividers.includes(email[i])) {
-        dividersCounter8++;
+        dividersCounter9++;
        }
     }
 
-    if (email.indexOf("gmail.com") > 1 && letterCounter8 >= 5 && dividersCounter8 <= 0) {
+    if (email.indexOf("gmail.com") > 1 && letterCounter9 >= 5 && dividersCounter9 <= 0) {
         document.getElementById('mail').classList.add("input-mail-green");
         document.querySelector(".mail-green").style.display = "flex";
         document.getElementById('mail').classList.remove("input-mail-red");
         document.querySelector(".mail-red").style.display = "none";
+        emailVerify = true;
+        document.getElementById('mail-datum').innerHTML=email;
     }else {
         document.getElementById('mail').classList.add("input-mail-red");
         document.querySelector(".mail-red").style.display = "flex";
         document.getElementById('mail').classList.remove("input-mail-green");
         document.querySelector(".mail-green").style.display = "none";
+        emailVerify = false;
     }
 }
 
 function validatePassword() {
     var password = document.getElementById('password').value;
 
-    var contadorLetras9 = 0;
+    var contadorLetras10 = 0;
 
-    var contadorNumero9 = 0;
+    var contadorNumero10 = 0;
 
-    var contadorDividers9 = 0;
+    var contadorDividers10 = 0;
 
     for (let i = 0; i < password.length; i++) {
       if (letters.includes(password[i].toLowerCase())) {
-          contadorLetras9++;
+          contadorLetras10++;
       }else if (capitalLetters.includes(password[i].toUpperCase())){
-          contadorLetras9++;
+          contadorLetras10++;
       }else if(dividers.includes(password[i])) {
-          contadorDividers9++;
+          contadorDividers10++;
       }else {
           Number.isInteger(password[i]);
-          contadorNumero9++;
+          contadorNumero10++;
       }
     }
 
-    if(password.length >= 8 && contadorLetras9 > 0 && contadorNumero9 > 0 && contadorDividers9 <= 0){
+    if(password.length >= 8 && contadorLetras10 > 0 && contadorNumero10 > 0 && contadorDividers10 <= 0){
         document.getElementById('password').classList.add("input-password-green");
         document.querySelector('.password-green').style.display = "flex";
         document.getElementById('password').classList.remove("input-password-red");
         document.querySelector('.password-red').style.display = "none";
-        verificationPass = true;
+        passwordVerify = true;
+        document.getElementById('password-datum').innerHTML=password;
     }else {
         document.getElementById('password').classList.add("input-password-red");
         document.querySelector('.password-red').style.display = "flex";
         document.getElementById('password').classList.remove("input-password-green");
         document.querySelector('.password-green').style.display = "none";
-        verificationPass = false;
+        passwordVerify = false;
     }
 }
 
@@ -351,37 +396,38 @@ function validateRepetPassword() {
     
     var password = document.getElementById('password').value;
 
-    var contadorLetras9 = 0;
+    var contadorLetras11 = 0;
 
-    var contadorNumero9 = 0;
+    var contadorNumero11 = 0;
 
-    var contadorDividers9 = 0;
+    var contadorDividers11 = 0;
 
     for (let i = 0; i < password.length; i++) {
       if (letters.includes(password[i].toLowerCase())) {
-          contadorLetras9++;
+          contadorLetras11++;
       }else if (capitalLetters.includes(password[i].toUpperCase())){
-          contadorLetras9++;
+          contadorLetras11++;
       }else if(dividers.includes(password[i])) {
-          contadorDividers9++;
+          contadorDividers11++;
       }else {
           Number.isInteger(password[i]);
-          contadorNumero9++;
+          contadorNumero11++;
       }
     }
 
-    if(repetPassword == password && repetPassword.length >= 8 && contadorLetras9 > 0 && contadorNumero9 > 0 && contadorDividers9 <= 0){
+    if(repetPassword == password && repetPassword.length >= 8 && contadorLetras11 > 0 && contadorNumero11 > 0 && contadorDividers11 <= 0){
         document.getElementById('repet').classList.add("input-repet-green");
         document.querySelector('.repet-green').style.display = "flex";
         document.getElementById('repet').classList.remove("input-repet-red");
         document.querySelector('.repet-red').style.display = "none";
-        verificationPass = true;
+        repetPasswordVerify = true;
+        document.getElementById('repet-datum').innerHTML=repetPassword;
     }else {
         document.getElementById('repet').classList.add("input-repet-red");
         document.querySelector('.repet-red').style.display = "flex";
         document.getElementById('repet').classList.remove("input-repet-green");
         document.querySelector('.repet-green').style.display = "none";
-        verificationPass = false;
+        repetPasswordVerify = false;
     }
 }
 
@@ -440,5 +486,10 @@ function validationSignUp() {
 window.onload = function () {
     document.querySelector('.form-signup').addEventListener('submit', function (event) {
     event.preventDefault();
+
+    if (nameVerify && lastNameVerify && dniVerify && dateVerify && telVerify && addressVerify && locationVerify && codeVerify && emailVerify && passwordVerify && repetPasswordVerify == true) {
+        document.querySelector(".emergent").style.display = "flex";
+        document.getElementById('form-sign').reset();
+    }
     })
 }

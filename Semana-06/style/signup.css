@@ -42,7 +42,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 800px;
+    height: 900px;
 }
 
 .login-father {
@@ -187,9 +187,30 @@ a {
 
 .emergent {
     display: none;
+    flex-direction: column;
     position: absolute;
     bottom: 292px;
+    border-radius: 30px;
     width: 380px;
-    height: 500px;
-    background-color: wheat;
+    height: 435px;
+    background-color: lavender;
+}
+
+.emergent div {
+    display: flex;
+    margin: 10px;
+}
+
+.emergent div h3 {
+    margin-left: 5px;
+}
+
+.routes {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+}
+
+.routes h2 {
+    font-size: 25px;
 }
