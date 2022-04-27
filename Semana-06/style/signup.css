@@ -54,10 +54,11 @@ main {
     border-radius: 30px;
     background-color: rgba(55, 56, 103, 0.4);
     width: 380px;
-    height: 750px;
+    height: auto;
 }
 
 .login-father h2 {
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 
@@ -164,6 +165,7 @@ form input {
 .access-login {
     display: flex;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 a {

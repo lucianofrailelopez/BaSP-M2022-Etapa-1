@@ -346,6 +346,45 @@ function validatePassword() {
     }
 }
 
+function validateRepetPassword() {
+    var repetPassword = document.getElementById('repet').value;
+    
+    var password = document.getElementById('password').value;
+
+    var contadorLetras9 = 0;
+
+    var contadorNumero9 = 0;
+
+    var contadorDividers9 = 0;
+
+    for (let i = 0; i < password.length; i++) {
+      if (letters.includes(password[i].toLowerCase())) {
+          contadorLetras9++;
+      }else if (capitalLetters.includes(password[i].toUpperCase())){
+          contadorLetras9++;
+      }else if(dividers.includes(password[i])) {
+          contadorDividers9++;
+      }else {
+          Number.isInteger(password[i]);
+          contadorNumero9++;
+      }
+    }
+
+    if(repetPassword == password && repetPassword.length >= 8 && contadorLetras9 > 0 && contadorNumero9 > 0 && contadorDividers9 <= 0){
+        document.getElementById('repet').classList.add("input-repet-green");
+        document.querySelector('.repet-green').style.display = "flex";
+        document.getElementById('repet').classList.remove("input-repet-red");
+        document.querySelector('.repet-red').style.display = "none";
+        verificationPass = true;
+    }else {
+        document.getElementById('repet').classList.add("input-repet-red");
+        document.querySelector('.repet-red').style.display = "flex";
+        document.getElementById('repet').classList.remove("input-repet-green");
+        document.querySelector('.repet-green').style.display = "none";
+        verificationPass = false;
+    }
+}
+
 
 function validationSignUp() {
     
@@ -388,6 +427,10 @@ function validationSignUp() {
     var password = document.getElementById('password').value;
     validatePassword();
     console.log(password);
+
+    var repetPassword = document.getElementById('repet').value;
+    validateRepetPassword();
+    console.log(repetPassword);
 }
 
 
