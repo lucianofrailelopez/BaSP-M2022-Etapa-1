@@ -19,18 +19,40 @@
         <main>
             <div class="login-father">
                     <h2>Sign Up</h2>
-                    <form action="">
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="Last name">
-                        <input type="number" placeholder="Dni">
-                        <input type="date" placeholder="Date of birth">
-                        <input type="tel" placeholder="Telephone">
-                        <input type="text" placeholder="Direction">
-                        <input type="text" placeholder="Location">
-                        <input type="number" placeholder="Postal Code">
-                        <input type="text" placeholder="Email">
-                        <input type="password" placeholder="Password">
-                        <input type="password" placeholder="Repeat password">
+                    <form action="" class="form-signup" onsubmit="validationSignUp()">
+                        <input type="text" id="name" class="input-name" placeholder="Name">
+                        <h3 class="name-red">Must only have more than 3 letters</h3>
+                        <h3 class="name-green">Correct</h3>
+                        <input type="text" id="lastName" class="input-lastname" placeholder="Last name">
+                        <h3 class="lastname-red">Must only have more than 3 letters</h3>
+                        <h3 class="lastname-green">Correct</h3>
+                        <input type="number" id="dni" class="input-dni" placeholder="Dni">
+                        <h3 class="dni-red">Only more than 7 numbers</h3>
+                        <h3 class="dni-green">Correct</h3>
+                        <input type="date" id="date" class="input-date" placeholder="Date of birth">
+                        <h3 class="date-red">Unacceptable year</h3>
+                        <h3 class="date-green">Correct</h3>
+                        <input type="number" id="tel" class="input-tel" placeholder="Telephone">
+                        <h3 class="tel-red">Must have 10 digits</h3>
+                        <h3 class="tel-green">Correct</h3>
+                        <input type="text" id="address" class="input-address" placeholder="Address">
+                        <h3 class="address-red">5 characters with numbers or letters</h3>
+                        <h3 class="address-green">Correct</h3>
+                        <input type="text" id="location" class="input-location" placeholder="Location">
+                        <h3 class="location-red">Must contain more than 3 letters</h3>
+                        <h3 class="location-green">Correct</h3>
+                        <input type="number" id="code" class="input-code" placeholder="Postal Code">
+                        <h3 class="code-red">only numbers and 4 or 5 digits</h3>
+                        <h3 class="code-green">Correct</h3>
+                        <input type="text" id="mail" class="input-mail" placeholder="Email">
+                        <h3 class="mail-red">valid email format</h3>
+                        <h3 class="mail-green">Correct</h3>
+                        <input type="password" id="password" class="input-password" placeholder="Password">
+                        <h3 class="password-red">At least 8 characters for letters and numbers.</h3>
+                        <h3 class="password-green">Correct</h3>
+                        <input type="password" id="repet" class="input-repet" placeholder="Repeat password">
+                        <h3 class="repet-red">Both passwords must be the same</h3>
+                        <h3 class="repet-green">Correct</h3>
                         <div class="button-continue">
                             <button type="submit">
                                 <h3>Create</h3>
@@ -40,7 +62,7 @@
                                 <a href="#">Sign Up now</a>
                             </div>
                         </div>
-                    </form> 
+                    </form>
             </div>
             <div class="emergent"></div>
         </main>

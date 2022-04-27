@@ -54,7 +54,7 @@ main {
     border-radius: 30px;
     background-color: rgba(55, 56, 103, 0.4);
     width: 380px;
-    height: 700px;
+    height: 750px;
 }
 
 .login-father h2 {
@@ -76,6 +76,70 @@ form input {
     width: 75%;
     height: 38px;
 }
+
+/* border */
+
+.input-name-activo,
+.input-lastname-green,
+.input-dni-green,
+.input-date-green,
+.input-tel-green,
+.input-address-green,
+.input-location-green,
+.input-code-green,
+.input-mail-green,
+.input-password-green,
+.input-repet-green {
+    border-bottom: 1px solid lime;
+}
+
+.input-namered-activo,
+.input-lastname-red, 
+.input-dni-red,
+.input-date-red,
+.input-tel-red,
+.input-address-red,
+.input-location-red,
+.input-code-red,
+.input-mail-red,
+.input-password-red,
+.input-repet-red {
+    border-bottom: 1px solid red;
+}
+
+/* message */
+
+.name-red,
+.lastname-red,
+.dni-red,
+.date-red,
+.tel-red,
+.address-red,
+.location-red,
+.code-red,
+.mail-red,
+.password-red,
+.repet-red {
+    display: none;
+    color: red;
+}
+
+.name-green,
+.lastname-green,
+.dni-green,
+.date-green,
+.tel-green,
+.address-green,
+.location-green,
+.code-green,
+.mail-green,
+.password-green,
+.repet-green {
+    display: none;
+    color: lime;
+}
+
+/**/
 
 .button-continue {
     display: flex;
