@@ -1,0 +1,216 @@
+header {
+    box-shadow: 0px 8px 16px rgb(50 50 71 / 6%);
+    width: 100%;
+}
+
+.first-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+h1 {
+    margin-left: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #373867;
+}
+
+h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 39px;
+    color: #373867;
+}
+
+h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+}
+
+.first-title img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 900px;
+}
+
+.login-father {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 4px 5px rgba(55, 56, 103, 0.19);
+    border-radius: 30px;
+    background-color: rgba(55, 56, 103, 0.4);
+    width: 380px;
+    height: auto;
+}
+
+.login-father h2 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+form input {
+    margin-top: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: rgba(55, 56, 103, 0);
+    width: 75%;
+    height: 38px;
+}
+
+/* border */
+
+.input-name-activo,
+.input-lastname-green,
+.input-dni-green,
+.input-date-green,
+.input-tel-green,
+.input-address-green,
+.input-location-green,
+.input-code-green,
+.input-mail-green,
+.input-password-green,
+.input-repet-green {
+    border-bottom: 1px solid lime;
+}
+
+.input-namered-activo,
+.input-lastname-red, 
+.input-dni-red,
+.input-date-red,
+.input-tel-red,
+.input-address-red,
+.input-location-red,
+.input-code-red,
+.input-mail-red,
+.input-password-red,
+.input-repet-red {
+    border-bottom: 1px solid red;
+}
+
+/* message */
+
+.name-red,
+.lastname-red,
+.dni-red,
+.date-red,
+.tel-red,
+.address-red,
+.location-red,
+.code-red,
+.mail-red,
+.password-red,
+.repet-red {
+    display: none;
+    color: red;
+}
+
+.name-green,
+.lastname-green,
+.dni-green,
+.date-green,
+.tel-green,
+.address-green,
+.location-green,
+.code-green,
+.mail-green,
+.password-green,
+.repet-green {
+    display: none;
+    color: lime;
+}
+
+/**/
+
+.button-continue {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.button-continue button {
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    width: 206px;
+    height: 29px;
+    background-color: #AACE9B;
+}
+
+.button-continue button h3 {
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.access-login {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    color: #BBEEA6;
+}
+
+.question-child {
+    position: relative;
+    top: 5px;
+    left: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    color: #373867;
+}
+
+.emergent {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    bottom: 292px;
+    border-radius: 30px;
+    width: 380px;
+    height: 435px;
+    background-color: lavender;
+}
+
+.emergent div {
+    display: flex;
+    margin: 10px;
+}
+
+.emergent div h3 {
+    margin-left: 5px;
+}
+
+.routes {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+}
+
+.routes h2 {
+    font-size: 25px;
+}
