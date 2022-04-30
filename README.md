@@ -20,6 +20,10 @@ the objective of this week was to produce a responsive page with what was alread
 
 the objective of the week was to acquire the knowledge of js and the resolution of multiple exercises.
 
+# Week 06
+
+the objective of the week make the page have access to login and signup and be able to complete the form with their respective validations.
+
 # Trackgenix
 
 Trackgenix is a web system that allows the registration of hours worked according to employee and project.
