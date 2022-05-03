@@ -19,48 +19,71 @@
         <main>
             <div class="login-father">
                     <h2>Sign Up</h2>
-                    <form action="" id="form-sign" class="form-signup" onsubmit="validationSignUp()">
-                        <input type="text" id="name" class="input-name" placeholder="Name">
-                        <h3 class="name-red">Must only have more than 3 letters</h3>
-                        <h3 class="name-green">Correct</h3>
-                        <input type="text" id="lastName" class="input-lastname" placeholder="Last name">
-                        <h3 class="lastname-red">Must only have more than 3 letters</h3>
-                        <h3 class="lastname-green">Correct</h3>
-                        <input type="number" id="dni" class="input-dni" placeholder="Dni">
-                        <h3 class="dni-red">Only more than 7 numbers</h3>
-                        <h3 class="dni-green">Correct</h3>
-                        <input type="date" id="date" class="input-date" placeholder="Date of birth">
-                        <h3 class="date-red">Unacceptable year</h3>
-                        <h3 class="date-green">Correct</h3>
-                        <input type="number" id="tel" class="input-tel" placeholder="Telephone">
-                        <h3 class="tel-red">Must have 10 digits</h3>
-                        <h3 class="tel-green">Correct</h3>
-                        <input type="text" id="address" class="input-address" placeholder="Address">
-                        <h3 class="address-red">5 characters with numbers or letters</h3>
-                        <h3 class="address-green">Correct</h3>
-                        <input type="text" id="location" class="input-location" placeholder="Location">
-                        <h3 class="location-red">Must contain more than 3 letters</h3>
-                        <h3 class="location-green">Correct</h3>
-                        <input type="number" id="code" class="input-code" placeholder="Postal Code">
-                        <h3 class="code-red">only numbers and 4 or 5 digits</h3>
-                        <h3 class="code-green">Correct</h3>
-                        <input type="text" id="mail" class="input-mail" placeholder="Email">
-                        <h3 class="mail-red">valid email format</h3>
-                        <h3 class="mail-green">Correct</h3>
-                        <input type="password" id="password" class="input-password" placeholder="Password">
-                        <h3 class="password-red">At least 8 characters for letters and numbers.</h3>
-                        <h3 class="password-green">Correct</h3>
-                        <input type="password" id="repet" class="input-repet" placeholder="Repeat password">
-                        <h3 class="repet-red">Both passwords must be the same</h3>
-                        <h3 class="repet-green">Correct</h3>
+                    <form action="" id="form-sign" class="form-signup">
+                        <div>
+                            <input type="text" class="input-name" placeholder="Name" id="name">
+                            <label class="name-red">Must only have more than 3 letters</label>
+                            <label class="name-red-second">Must not contain spaces and symbols</label>
+                            <label class="name-green">Correct</label>
+                        </div>
+                        <div>
+                            <input type="text" id="lastName" class="input-lastname" placeholder="Last name">
+                            <label class="lastname-red">Must only have more than 3 letters</label>
+                            <label class="lastname-green">Correct</label>
+                        </div>
+                        <div>
+                            <input type="text" id="dni" class="input-dni" placeholder="Dni">
+                            <label class="dni-red">Only more than 7 numbers</label>
+                            <label class="dni-green">Correct</label>
+                        </div>
+                        <div>
+                            <input type="date" id="date" class="input-date" placeholder="Date of birth">
+                            <label class="date-red">Unacceptable year</label>
+                            <label class="date-green">Correct</label>
+                        </div>
+                        <div>
+                            <input type="text" id="tel" class="input-tel" placeholder="Telephone">
+                            <label class="tel-red">Must have 10 digits</label>
+                            <label class="tel-green">Correct</label>
+                        </div>
+                        <div>
+                            <input type="text" id="address" class="input-address" placeholder="Address">
+                            <label class="address-red">5 characters with numbers or letters</label>
+                            <label class="address-green">Correct</label>
+                        </div>
+                        <div>
+                            <input type="text" id="location" class="input-location" placeholder="Location">
+                            <label class="location-red">Must contain more than 3 letters</label>
+                            <label class="location-green">Correct</label>
+                        </div>
+                        <div>
+                            <input type="text" id="code" class="input-code" placeholder="Postal Code">
+                            <label class="code-red">only numbers and 4 or 5 digits</label>
+                            <label class="code-green">Correct</label>
+                        </div>
+                        <div>
+                            <input type="text" id="mail" class="input-mail" placeholder="Email">
+                            <label class="mail-red">valid email format</label>
+                            <label class="mail-green">Correct</label>
+                        </div>
+                        <div>
+                            <input type="password" id="password" class="input-password" placeholder="Password">
+                            <label class="password-red">At least 8 characters for letters and numbers.</label>
+                            <label class="password-green">Correct</label>
+                        </div>
+                        <div>
+                            <input type="password" id="repet" class="input-repet" placeholder="Repeat password">
+                            <label class="repet-red">Both passwords must be the same</label>
+                            <label class="repet-green">Correct</label>
+                        </div>
                         <div class="button-continue">
                             <button type="submit">
                                 <h3>Create</h3>
                             </button>
-                            <div class="access-login">
-                                <h3>Don't have an account?</h3>
-                                <a href="./login.html">Log In now</a>
-                            </div>
+                        </div>
+                        <div class="login-access">
+                            <h3>Don't have an account?</h3>
+                            <a href="./login.html">Log In now</a>
                         </div>
                     </form>
             </div>
@@ -113,6 +136,9 @@
                     <a href="./index.html"><h2>Home</h2></a>
                     <a href="./login.html"><h2>Log In</h2></a>
                 </div>
+                <button id="exit-emer">
+                    <img src="./../assets/exit-emergent.png" alt="">
+                </button>
             </div>
         </main>
     </body>

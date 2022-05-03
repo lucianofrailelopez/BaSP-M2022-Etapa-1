@@ -1,8 +1,14 @@
-var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"," "];
+
+
+// expreciones
+
+var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
 
 var capitalLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","U","V","W","X","Y","Z"];
 
-var dividers = ["-",",","%","#","!","^","_","+","=","?","~","*","{","}","[","]",";","?","|","<",">"];
+var dividers = ["-",",","%","#","!","^","_","+","=","?","~","*","{","}","[","]",";","?","|","<",">","@"];
+
+var dividersSecond = ["-",",","%","#","!","^","_","+","=","?","~","*","{","}","[","]",";","?","|","<",">"];
 
 var arraysNumbers = ["1","2","3","4","5","6","7","8","9","0"];
 
@@ -38,25 +44,34 @@ function validateName() {
     var numberCounter = 0;
 
     var dividersCounter = 0;
+
+    var contadorspace = 0;
     
     for (let i = 0; i < name.length; i++) {
        if(letters.includes(name[i])) {
         letterCounter++;
        }else if(capitalLetters.includes(name[i])) {
         letterCounter++;
-       }else if(Number.isInteger(name[i])) {
+       }else if(arraysNumbers.includes(name[i])) {
         numberCounter++;
-       }else {
-           dividers.includes(name[i]);
+       }else if(dividers.includes(name[i])) {
            dividersCounter++;
+       }else if(space.includes(name[i])) {
+           contadorspace++;
        }
     }
 
-    if(name.length > 3 && letterCounter > 0 && numberCounter <= 0 && dividersCounter <= 0) {
+    if(name.indexOf(" ") > 0 || dividersCounter >= 1) {
+        document.getElementById('name').classList.add('input-namered-activo');
+        document.querySelector('.name-red-second').style.display = "flex";
+        document.querySelector('.name-green').style.display = "none";
+        document.querySelector('.name-red').style.display = "none";
+    }else if (name.length > 3 && letterCounter > 0 && numberCounter <= 0) {
         document.getElementById('name').classList.add('input-name-activo');
         document.querySelector('.name-green').style.display = "flex";
         document.getElementById('name').classList.remove('input-namered-activo');
         document.querySelector('.name-red').style.display = "none";
+        document.querySelector('.name-red-second').style.display = "none";
         nameVerify = true;
         document.getElementById('name-datum').innerHTML=name;
     }else {
@@ -64,6 +79,7 @@ function validateName() {
         document.querySelector('.name-red').style.display = "flex";
         document.getElementById('name').classList.remove('input-name-activo');
         document.querySelector('.name-green').style.display = "none";
+        document.querySelector('.name-red-second').style.display = "none";
         nameVerify = false;
     }
 }
@@ -82,15 +98,14 @@ function validateLastName() {
             letterCounter2++;
            }else if(capitalLetters.includes(lastName[i])) {
             letterCounter2++;
-           }else if(Number.isInteger(lastName[i])) {
+           }else if(arraysNumbers.includes(lastName[i])) {
             numberCounter2++;
-           }else {
-               dividers.includes(lastName[i]);
-               dividersCounter2++;
+           }else if (dividers.includes(lastName[i])) {
+            dividersCounter2++;
            }
     }
 
-    if(lastName.length > 3 && letterCounter2 > 0 && numberCounter2 <= 0 && dividersCounter2 <= 0) {
+    if(lastName.length > 3 && letterCounter2 > 0 && numberCounter2 <= 0 && dividersCounter2 <= 0 && lastName.indexOf(" ") > 1) {
         document.getElementById('lastName').classList.add('input-lastname-green');
         document.querySelector('.lastname-green').style.display = "flex";
         document.getElementById('lastName').classList.remove('input-lastname-red');
@@ -120,15 +135,14 @@ function validateDni() {
             letterCounter3++;
            }else if(capitalLetters.includes(dni[i])) {
             letterCounter3++;
-           }else if(Number.isInteger(dni[i])) {
+           }else if(arraysNumbers.includes(dni[i])) {
             numberCounter3++;
-           }else {
-               dividers.includes(dni[i]);
-               dividersCounter3++;
+           }else if (dividers.includes(dni[i])) {
+            dividersCounter3++;
            }
     }
 
-    if (dni.length >= 7 && letterCounter3 >= 0 && dividersCounter3 >= 0) {
+    if (dni.length >= 7 && numberCounter3 > 0 && letterCounter3 < 1 && dividersCounter3 < 1) {
         document.getElementById('dni').classList.add("input-dni-green");
         document.querySelector(".dni-green").style.display = "flex";
         document.getElementById('dni').classList.remove("input-dni-red");
@@ -151,7 +165,7 @@ function validateDate() {
 
     var dividersCounter4 = 0;
 
-    var date111 = date.substring(0,3);
+    var dateYear = date.substring(0,3);
 
     for (let i = 0; i < date.length; i++) {
         if(letters.includes(date[i])) {
@@ -164,7 +178,7 @@ function validateDate() {
            }
     }
 
-    if ( date111 < "1930") {
+    if ( dateYear < "1930") {
         document.getElementById('date').classList.add("input-date-red");
         document.querySelector(".date-red").style.display = "flex";
         document.getElementById('date').classList.remove("input-date-green");
@@ -192,14 +206,16 @@ function validateTel() {
     for (var i = 0; i < tel.length; i++) {
         if(letters.includes(tel[i])) {
             letterCounter5++;
-           }else if(dividers.includes(tel[i])) {
+           }else if (capitalLetters.includes(tel[i])) {
+            letterCounter5++;
+           } else if(dividers.includes(tel[i])) {
             dividersCounter5++;
-           }else if(Number.isInteger(tel[i])) {
+           }else if(arraysNumbers.includes(tel[i])) {
             numberCounter5++;
            }
     }
 
-    if (tel.length >= 10 && dividersCounter5 <= 0) {
+    if (tel.length >= 10 && numberCounter5 > 0 && letterCounter5 < 1 && dividersCounter5 < 1) {
         document.getElementById('tel').classList.add("input-tel-green");
         document.querySelector(".tel-green").style.display = "flex";
         document.getElementById('tel').classList.remove("input-tel-red");
@@ -218,9 +234,13 @@ function validateTel() {
 function validateAddress() {
     var address = document.getElementById('address').value;
 
+    var space = " ";
+
     var letterCounter6 = 0;
 
     var numberCounter6 = 0;
+
+    var contadorSpace = 0;
     
     for (let i = 0; i < address.length; i++) {
        if(letters.includes(address[i])) {
@@ -229,10 +249,12 @@ function validateAddress() {
         letterCounter6++;
        }else if(arraysNumbers.includes(address[i])) {
         numberCounter6++;
+       }else if (space.includes(address[i])) {
+        contadorSpace++;
        }
     }
 
-    if (address.length > 5 && address.indexOf(" ") > 1 && numberCounter6 > 1) {
+    if (address.length > 5 && address.indexOf(" ") > 1 && numberCounter6 > 1 && contadorSpace < 2) {
         document.getElementById('address').classList.add("input-address-green");
         document.querySelector(".address-green").style.display = "flex";
         document.getElementById('address').classList.remove("input-address-red");
@@ -269,7 +291,7 @@ function validateLocation() {
        }
     }
 
-    if (location.length > 3 && letterCounter7 > 0 && numberCounter7 <= 0 && dividersCounter7 <= 0) {
+    if (location.length > 3 && letterCounter7 > 0 && numberCounter7 <= 0 && dividersCounter7 < 1) {
         document.getElementById('location').classList.add("input-location-green");
         document.querySelector(".location-green").style.display = "flex";
         document.getElementById('location').classList.remove("input-location-red");
@@ -290,6 +312,8 @@ function validatePostalCode() {
 
     var numberCounter8 = 0;
 
+    var letterCounter8 = 0;
+
     var dividersCounter8 = 0;
     
     for (let i = 0; i < postalCode.length; i++) {
@@ -297,10 +321,14 @@ function validatePostalCode() {
         numberCounter8++;
         }else if(dividers.includes(postalCode[i])) {
         dividersCounter8++;
+       }else if (letters.includes(postalCode[i])) {
+        letterCounter8++;
+       }else if (capitalLetters.includes(postalCode[i])){
+        letterCounter8++;
        }
     }
 
-    if (numberCounter8 >= 4 && numberCounter8 <= 5 && dividersCounter8 <= 0) {
+    if (numberCounter8 >= 4 && numberCounter8 <= 5 && dividersCounter8 <= 0 && letterCounter8 < 1) {
         document.getElementById('code').classList.add("input-code-green");
         document.querySelector(".code-green").style.display = "flex";
         document.getElementById('code').classList.remove("input-code-red");
@@ -332,12 +360,12 @@ function validateEmail() {
         letterCounter9++;
        }else if(arraysNumbers.includes(email[i])) {
         numberCounter9++;
-       }else if(dividers.includes(email[i])) {
+       }else if(dividersSecond.includes(email[i])) {
         dividersCounter9++;
        }
     }
 
-    if (email.indexOf("gmail.com") > 1 && letterCounter9 >= 5 && dividersCounter9 <= 0) {
+    if (email.indexOf("@gmail.com") > 1 && letterCounter9 > 4 && numberCounter9 >= 0 && dividersCounter9 < 1) {
         document.getElementById('mail').classList.add("input-mail-green");
         document.querySelector(".mail-green").style.display = "flex";
         document.getElementById('mail').classList.remove("input-mail-red");
@@ -480,16 +508,94 @@ function validationSignUp() {
 }
 
 
-
-
-
 window.onload = function () {
     document.querySelector('.form-signup').addEventListener('submit', function (event) {
     event.preventDefault();
+
+    validationSignUp();
 
     if (nameVerify && lastNameVerify && dniVerify && dateVerify && telVerify && addressVerify && locationVerify && codeVerify && emailVerify && passwordVerify && repetPasswordVerify == true) {
         document.querySelector(".emergent").style.display = "flex";
         document.getElementById('form-sign').reset();
     }
     })
+
+    //exit-emergente
+    var buttonExit = document.getElementById("exit-emer");
+
+    buttonExit.addEventListener("click", function () {
+        document.querySelector(".emergent").style.display = "none";
+    })
+
+    // var-input
+    var nameEvent = document.getElementById('name');
+    var lastNameEvent = document.getElementById('lastName');
+    var dniEvent = document.getElementById('dni');
+    var dateEvent = document.getElementById('date');
+    var telEvent = document.getElementById('tel');
+    var addressEvent = document.getElementById('address');
+    var locationEvent = document.getElementById('location');
+    var codeEvent = document.getElementById('code');
+    var mailEvent = document.getElementById('mail');
+    var passwordEvent = document.getElementById('password');
+    var repetPasswordEvent = document.getElementById('repet');
+    // blur
+    nameEvent.addEventListener('blur', validateName);
+    lastNameEvent.addEventListener('blur', validateLastName);
+    dniEvent.addEventListener('blur', validateDni);
+    dateEvent.addEventListener('blur', validateDate);
+    telEvent.addEventListener('blur', validateTel);
+    addressEvent.addEventListener('blur', validateAddress);
+    locationEvent.addEventListener('blur', validateLocation);
+    codeEvent.addEventListener('blur', validatePostalCode);
+    mailEvent.addEventListener('blur', validateEmail);
+    passwordEvent.addEventListener('blur', validatePassword);
+    repetPasswordEvent.addEventListener('blur', validateRepetPassword);
+
+    //focus
+    nameEvent.addEventListener('focus', function () {
+        document.querySelector('.name-red').style.display = "none";
+        document.querySelector('.name-green').style.display = "none";
+    });
+    lastNameEvent.addEventListener('focus', function () {
+        document.querySelector('.lastname-red').style.display = "none";
+        document.querySelector('.lastname-green').style.display = "none";
+    })
+    dniEvent.addEventListener('focus', function () {
+        document.querySelector(".dni-green").style.display = "none";
+        document.querySelector(".dni-red").style.display = "none";
+    });
+    dateEvent.addEventListener('focus', function () {
+        document.querySelector(".date-red").style.display = "none";
+        document.querySelector(".date-green").style.display = "none";
+    });
+    telEvent.addEventListener('focus', function () {
+        document.querySelector(".tel-red").style.display = "none";
+        document.querySelector(".tel-green").style.display = "none";
+    });
+    addressEvent.addEventListener('focus', function () {
+        document.querySelector(".address-green").style.display = "none";
+        document.querySelector(".address-red").style.display = "none";
+    });
+    locationEvent.addEventListener('focus', function () {
+        document.querySelector(".location-green").style.display = "none";
+        document.querySelector(".location-red").style.display = "none";
+    });
+    codeEvent.addEventListener('focus', function () {
+        document.querySelector(".code-green").style.display = "none";
+        document.querySelector(".code-red").style.display = "none";
+    });
+    mailEvent.addEventListener('focus', function () {
+        document.querySelector(".mail-green").style.display = "none";
+        document.querySelector(".mail-red").style.display = "none";
+    });
+    passwordEvent.addEventListener('focus', function () {
+        document.querySelector('.password-red').style.display = "none";
+        document.querySelector('.password-green').style.display = "none";
+    });
+    repetPasswordEvent.addEventListener('focus', function () {
+        document.querySelector('.repet-green').style.display = "none";
+        document.querySelector('.repet-red').style.display = "none";
+    });
+
 }
