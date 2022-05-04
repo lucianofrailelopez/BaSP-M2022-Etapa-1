@@ -24,6 +24,12 @@ the objective of the week was to acquire the knowledge of js and the resolution 
 
 the objective of the week make the page have access to login and signup and be able to complete the form with their respective validations.
 
+# Week 07
+
+The objective for the week is to store the signUp form values in localstorage and send the signUp and logIn data to a server.
+
+page: [https://lucianofrailelopez.github.io/BaSP-M2022-Etapa-1/Semana-07/views/](https://lucianofrailelopez.github.io/BaSP-M2022-Etapa-1/Semana-07/views/)
+
 # Trackgenix
 
 Trackgenix is a web system that allows the registration of hours worked according to employee and project.
