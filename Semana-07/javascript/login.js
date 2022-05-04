@@ -75,7 +75,7 @@ function verifyPassword() {
     for (let i = 0; i < password.length; i++) {
       if (letters.includes(password[i].toLowerCase())) {
           contadorLetras2++;
-      }else if (capitalLetters.includes(password[i].toUpperCase())){
+      }else if (capitalLetters.includes(password[i])){
           contadorLetras2++;
       }else if(dividers.includes(password[i])) {
           contadorDividers2++;
@@ -86,7 +86,7 @@ function verifyPassword() {
       }
     }
 
-    if (contadorLetras2 > 5 && contadorNumero2 >= 0 && contadorDividers2 < 1 && counterSpace2 < 1) {
+    if (contadorLetras2 > 3 && contadorNumero2 > 0 && contadorDividers2 < 1 && counterSpace2 < 1) {
         document.getElementById('password').classList.add('input-password-green');
         document.querySelector('.password-green').style.display= "flex";
         document.getElementById('password').classList.remove('input-password-red');
@@ -122,16 +122,35 @@ window.onload = function () {
     document.querySelector('.form-login').addEventListener('submit', function (event) {
         event.preventDefault();
 
+        const emailValue = document.getElementById('mail').value;
+        const passwordValue = document.getElementById('password').value;
+        var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login';
+        url = url + '?email=' + emailValue + '&password=' + passwordValue;
+
         checkValidations();
 
         if(verificationEmail && verificationPass == true) {
-            document.querySelector('.message-correct').classList.add('message-correct-activo');
-            document.querySelector('.message-incorrect').classList.remove('message-incorrect-activo');
+            fetch(url)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(res) {
+                alert(res.msg);
+            })
             document.querySelector('.form-login').reset();
             document.querySelector(".emergent").style.display = "flex";
         }else {
-            document.querySelector('.message-incorrect').classList.add('message-incorrect-activo');
-            document.querySelector('.message-correct').classList.remove('message-correct-activo');
+            fetch(url) 
+            .then(function(res) {
+                return res.json();
+            })
+            .then(function(res){
+                alert(res.error.msg);
+            })
+            .catch(function(err){
+                console.error(err);
+                alert(response.statustext);
+            })
             document.querySelector(".emergent").style.display = "flex";
         }
     })
