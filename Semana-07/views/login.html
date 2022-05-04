@@ -21,14 +21,18 @@
                 <div class="title-login">
                     <h2>Log In</h2>
                 </div>
-                <form action="" class="form-login" onsubmit="checkValidations()">
+                <form action="" class="form-login">
                     <div class="form-inputs">
-                        <input type="text" id="mail" class="input-mail" placeholder="Email" onblur="checkEmail()" onfocus="fixingup()">
-                        <h3 class="message-mailgreen">Correct</h3>
-                        <h3 class="message-mailred">Wrong email</h3>
-                        <input type="password" id="password" class="input-password" placeholder="Password" onblur="checkPass()" onfocus="fixingupPass()">
-                        <h3 class="message-passgreen">Correct</h3>
-                        <h3 class="message-passred">Wrong password</h3>
+                        <div>
+                            <input type="text" id="mail" class="input-mail" placeholder="Email">
+                            <label class="email-green">Correct</label>
+                            <label class="email-red">Wrong email</label>
+                        </div>
+                        <div>
+                            <input type="password" id="password" class="input-password" placeholder="Password">
+                            <label class="password-green">Correct</label>
+                            <label class="password-red">Wrong password</label>
+                        </div>
                     </div>
                     <div class="button-continue">
                         <div class="check-remember">
@@ -50,6 +54,22 @@
                     <a href="./sign-up.html">Sign Up now</a>
                 </div>
             </div>
+            <div class="emergent">
+                <div>
+                    <h3>Email: </h3>
+                    <h3 id="date-email"></h3>
+                </div>
+                <div>
+                    <h3>Password: </h3>
+                    <h3 id="date-password"></h3>
+                </div>
+                <div class="routes">
+                    <a href="./index.html"><h2>Home</h2></a>
+                    <a href="./login.html"><h2>Log In</h2></a>
+                </div>
+                <button id="exit-emer">
+                    <h3>Exit</h3>
+                </button>
         </main>
     </body>
 </html>

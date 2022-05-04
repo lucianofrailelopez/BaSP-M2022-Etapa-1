@@ -5,6 +5,10 @@ var capitalLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O
 
 var dividers = ["-",",","%","#","!","^","_","+","=","?","~","*"];
 
+var arraysNumbers = ["1","2","3","4","5","6","7","8","9","0"];
+
+var space = " ";
+
 var verificationEmail;
 
 var verificationPass;
@@ -18,6 +22,12 @@ function verifyEmail() {
 
     var contadorDividers = 0;
 
+    var contadorspace = 0;
+
+    var at = "@";
+
+    var contadorAt = 0;
+
     for (let i = 0; i < email.length; i++) {
       if (letters.includes(email[i].toLowerCase())) {
           contadorLetras1++;
@@ -25,24 +35,29 @@ function verifyEmail() {
           contadorLetras1++;
       }else if(dividers.includes(email[i])){
           contadorDividers++;
-      }else {
-          Number.isInteger(email[i]);
-          contadorNumero1++;
+      }else if (at.includes(email[i])) {
+          contadorAt++;
+      }else if(arraysNumbers.includes(email[i])){
+        contadorNumero1++;
+      }else if (space.includes(email[i])) {
+          contadorspace++;
       }
     }
 
-    if(email.length > 3 && email.indexOf('@gmail.com') > 1 && contadorLetras1 > 0 && contadorDividers <= 0) {
-        document.querySelector('.message-mailgreen').classList.add('message-mailgreen-activo');
-        document.querySelector('.input-mail').classList.add('input-mailgreen-activo');
-        document.querySelector('.input-mail').classList.remove('input-mailred-activo');
-        document.querySelector('.message-mailred').classList.remove('message-mailred-activo');
+    if (contadorAt < 2 && contadorLetras1 > 3 && contadorNumero1 < 1 && contadorDividers < 1 && contadorspace < 1) {
+        document.getElementById('mail').classList.add('input-mail-green');
+        document.querySelector('.email-green').style.display = "flex";
+        document.getElementById('mail').classList.remove('input-mail-red');
+        document.querySelector('.email-red').style.display = "none";
         verificationEmail = true;
+        document.getElementById('date-email').innerHTML=email;
     }else {
-        document.querySelector('.message-mailred').classList.add('message-mailred-activo');
-        document.querySelector('.input-mail').classList.add('input-mailred-activo');
-        document.querySelector('.input-mail').classList.remove('input-mailgreen-activo');
-        document.querySelector('.message-mailgreen').classList.remove('message-mailgreen-activo');
+        document.getElementById('mail').classList.add('input-mail-red');
+        document.querySelector('.email-red').style.display = "flex";
+        document.getElementById('mail').classList.remove('input-mail-green');
+        document.querySelector('.email-green').style.display = "none";
         verificationEmail = false;
+        document.getElementById('date-email').innerHTML="Error";
     }
 }
 
@@ -55,6 +70,8 @@ function verifyPassword() {
 
     var contadorDividers2 = 0;
 
+    var counterSpace2 = 0;
+
     for (let i = 0; i < password.length; i++) {
       if (letters.includes(password[i].toLowerCase())) {
           contadorLetras2++;
@@ -62,40 +79,28 @@ function verifyPassword() {
           contadorLetras2++;
       }else if(dividers.includes(password[i])) {
           contadorDividers2++;
-      }else {
-          Number.isInteger(password[i]);
+      }else if (arraysNumbers.includes(password[i])) {
           contadorNumero2++;
+      }else if (space.includes(password[i])) {
+          counterSpace2++;
       }
     }
-    if(password.length >= 8 && contadorLetras2 > 0 && contadorNumero2 > 0 && contadorDividers2 <= 0){
-        document.querySelector('.input-password').classList.add('input-passwordgreen-activo');
-        document.querySelector('.message-passgreen').classList.add('message-passgreen-activo');
-        document.querySelector('.input-password').classList.remove('input-passwordred-activo');
-        document.querySelector('.message-passred').classList.remove('message-passred-activo');
+
+    if (contadorLetras2 > 5 && contadorNumero2 >= 0 && contadorDividers2 < 1 && counterSpace2 < 1) {
+        document.getElementById('password').classList.add('input-password-green');
+        document.querySelector('.password-green').style.display= "flex";
+        document.getElementById('password').classList.remove('input-password-red');
+        document.querySelector('.password-red').style.display= "none";
+        document.getElementById('date-password').innerHTML=password;
         verificationPass = true;
     }else {
-        document.querySelector('.input-password').classList.add('input-passwordred-activo');
-        document.querySelector('.message-passred').classList.add('message-passred-activo');
-        document.querySelector('.input-password').classList.remove('input-passwordgreen-activo');
-        document.querySelector('.message-passgreen').classList.remove('message-passgreen-activo');
+        document.getElementById('password').classList.add('input-password-red');
+        document.querySelector('.password-red').style.display= "flex";
+        document.getElementById('password').classList.remove('input-password-green');
+        document.querySelector('.password-green').style.display= "none";
+        document.getElementById('date-password').innerHTML="Error";
         verificationPass = false;
     }
-}
-
-function checkEmail() {
-    verifyEmail();
-}
-
-function checkPass() {
-    verifyPassword();
-}
-
-function fixingup() {
-    document.querySelector('.message-mailred').classList.remove('message-mailred-activo');
-}
-
-function fixingupPass() {
-    document.querySelector('.message-passred').classList.remove('message-passred-activo');
 }
 
 
@@ -117,13 +122,37 @@ window.onload = function () {
     document.querySelector('.form-login').addEventListener('submit', function (event) {
         event.preventDefault();
 
+        checkValidations();
+
         if(verificationEmail && verificationPass == true) {
             document.querySelector('.message-correct').classList.add('message-correct-activo');
             document.querySelector('.message-incorrect').classList.remove('message-incorrect-activo');
             document.querySelector('.form-login').reset();
+            document.querySelector(".emergent").style.display = "flex";
         }else {
             document.querySelector('.message-incorrect').classList.add('message-incorrect-activo');
             document.querySelector('.message-correct').classList.remove('message-correct-activo');
+            document.querySelector(".emergent").style.display = "flex";
         }
     })
+    //blur and focus
+        var mailEvent = document.getElementById('mail');
+        mailEvent.addEventListener('blur', verifyEmail);
+        mailEvent.addEventListener('focus', function () {
+            document.querySelector('.email-green').style.display = "none";
+            document.querySelector('.email-red').style.display = "none";
+        });
+
+        var passwordEvent = document.getElementById('password');
+        passwordEvent.addEventListener('blur', verifyPassword);
+        passwordEvent.addEventListener('focus', function () {
+            document.querySelector('.password-red').style.display= "none";
+            document.querySelector('.password-green').style.display= "none";
+        });
+
+        var buttonExit = document.getElementById("exit-emer");
+
+        buttonExit.addEventListener("click", function () {
+            document.querySelector(".emergent").style.display = "none";
+        })
 }

@@ -120,14 +120,22 @@ form div input {
 .name-red,
 .name-red-second,
 .lastname-red,
+.lasname-red-second,
 .dni-red,
+.dni-red-second,
 .date-red,
 .tel-red,
+.tel-red-second,
 .address-red,
+.address-red-second,
 .location-red,
+.location-red-second,
 .code-red,
+.code-red-second,
 .mail-red,
+.mail-red-second,
 .password-red,
+.password-red-second,
 .repet-red {
     display: none;
     color: red;
@@ -197,7 +205,7 @@ a {
     display: none;
     flex-direction: column;
     position: absolute;
-    bottom: 700px;
+    bottom: 30%;
     border-radius: 30px;
     width: 380px;
     height: 441px;

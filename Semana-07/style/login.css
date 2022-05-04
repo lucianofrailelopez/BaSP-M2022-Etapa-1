@@ -86,43 +86,37 @@ main {
     border: none;
     border-bottom: 1px solid black;
     background-color: rgba(55, 56, 103, 0);
+    width: 100%;
     height: 38px;
-}
-
-.input-mailgreen-activo, .input-passwordgreen-activo {
-    border-bottom: 1px solid lime;
-}
-
-.input-mailred-activo, .input-passwordred-activo {
-    border-bottom: 1px solid red;
 }
 
 ::placeholder {
     color: #373867;
 }
 
-.message-mailgreen, .message-passgreen {
-    display: none;
-    margin-left: 5px;
-    font-size: 11px;
-    color: lime;
+/* input-border */
+
+.input-mail-green, .input-password-green{
+    border-bottom: 1px solid lime;
 }
 
-.message-mailgreen-activo, .message-passgreen-activo {
-    display: flex;
+.input-mail-red, .input-password-red {
+    border-bottom: 1px solid red;
 }
 
-.message-passred, .message-mailred {
+/* mensajes */
+
+.email-red, .password-red {
     display: none;
-    margin-left: 5px;
-    font-size: 11px;
     color: red;
 }
 
-.message-mailred-activo, .message-passred-activo {
-    display: flex;
+.email-green, .password-green {
+    display: none;
+    color: lime;
 }
 
+/* */
 .button-continue {
     display: flex;
     flex-direction: column;
@@ -192,4 +186,40 @@ a {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 12px;
     color: #BBEEA6;
+}
+
+.emergent {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    bottom: 45%;
+    border-radius: 30px;
+    width: 380px;
+    height: 162px;
+    background-color: lavender;
+}
+
+.emergent div {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.routes a {
+    margin-left: 10px;
+}
+
+.emergent div h3 {
+    margin-left: 5px;
+}
+
+.emergent button {
+    position: relative;
+    left: 42%;
+    width: 68px;
+}
+
+.emergent img {
+    width: 50px;
+    height: 50px;
 }
