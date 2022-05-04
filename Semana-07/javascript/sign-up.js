@@ -642,92 +642,139 @@ window.onload =
         document.querySelector('.form-signup').addEventListener('submit', function (event) {
             event.preventDefault();
             
+            var date = new Date(document.getElementById('date').value);
+            var month = (1 + date.getMonth()).toString().padStart(2, '0');
+            var day = date.getDate().toString().padStart(2, '0');
+            changedDate = month + '/' + day + '/' + date.getFullYear();
             
+            var firstName = document.getElementById('name').value;
+            var lastName = document.getElementById('lastName').value;
+            var dni = document.getElementById('dni').value;
+            var phoneNumber = document.getElementById('tel').value;
+            var address = document.getElementById('address').value;
+            var userLocation = document.getElementById('location').value;
+            var zipCode = document.getElementById('code').value;
+            var email = document.getElementById('mail').value;
+            var password = document.getElementById('password').value;
+            var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup';
+            url = url + '?name=' + firstName + '&lastName=' + lastName + '&dni=' + dni + '&dob=' + changedDate + '&phone=' + phoneNumber + '&address=' + address + '&city=' + userLocation + '&zip=' + zipCode + '&email=' + email + '&password=' + password;
+
         
             validationSignUp();
         
             if (nameVerify && lastNameVerify && dniVerify && dateVerify && telVerify && addressVerify && locationVerify && codeVerify && emailVerify && passwordVerify && repetPasswordVerify == true) {
                 document.querySelector(".emergent").style.display = "flex";
+                fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(res) {
+                    alert(res.msg);
+                    alert(`Name: ${firstName}` + `Last Name: ${lastName}` + `Birthday: ${changedDate}` + `DNI: ${dni}` + `Phone: ${phoneNumber}` + `Address: ${address}` + `Location: ${userLocation}` + `Zip Code: ${zipCode}` + `Email: ${email}` + `Password: ${password}`);
+                    localStorage.setItem('name', firstName);
+                    localStorage.setItem('lastName', lastName);
+                    localStorage.setItem('Birthday', changedDate);
+                    localStorage.setItem('DNI', dni);
+                    localStorage.setItem('phone', phoneNumber);
+                    localStorage.setItem('address', address);
+                    localStorage.setItem('city', userLocation);
+                    localStorage.setItem('postal', zipCode);
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('password', password);
+                }) .catch(function(err){
+                    console.log('error');
+                })
             }else {
                 document.querySelector(".emergent").style.display = "flex";
+                fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(res) {
+                    alert(res.errors[0].msg)
+                })
+                .catch(function(err) {
+                    console.log('error')
+                })
             }
             })
-    //exit-emergente
-    var buttonExit = document.getElementById("exit-emer");
 
-    buttonExit.addEventListener("click", function () {
-        document.querySelector(".emergent").style.display = "none";
-    })
+        //exit-emergente
+        var buttonExit = document.getElementById("exit-emer");
 
-    // var-input
-    var nameEvent = document.getElementById('name');
-    var lastNameEvent = document.getElementById('lastName');
-    var dniEvent = document.getElementById('dni');
-    var dateEvent = document.getElementById('date');
-    var telEvent = document.getElementById('tel');
-    var addressEvent = document.getElementById('address');
-    var locationEvent = document.getElementById('location');
-    var codeEvent = document.getElementById('code');
-    var mailEvent = document.getElementById('mail');
-    var passwordEvent = document.getElementById('password');
-    var secondPasswordEvent = document.getElementById('repet');
-    // blur
-    nameEvent.addEventListener('blur', validateName);
-    lastNameEvent.addEventListener('blur', validateLastName);
-    dniEvent.addEventListener('blur', validateDni);
-    dateEvent.addEventListener('blur', validateDate);
-    telEvent.addEventListener('blur', validateTel);
-    addressEvent.addEventListener('blur', validateAddress);
-    locationEvent.addEventListener('blur', validateLocation);
-    codeEvent.addEventListener('blur', validatePostalCode);
-    mailEvent.addEventListener('blur', validateEmail);
-    passwordEvent.addEventListener('blur', validatePassword);
-    secondPasswordEvent.addEventListener('blur', validateRepetPassword);
+        buttonExit.addEventListener("click", function () {
+            document.querySelector(".emergent").style.display = "none";
+        })
 
-    //focus
-    nameEvent.addEventListener('focus', function () {
-        document.querySelector('.name-red').style.display = "none";
-        document.querySelector('.name-green').style.display = "none";
-    });
-    lastNameEvent.addEventListener('focus', function () {
-        document.querySelector('.lastname-red').style.display = "none";
-        document.querySelector('.lastname-green').style.display = "none";
-    })
-    dniEvent.addEventListener('focus', function () {
-        document.querySelector(".dni-green").style.display = "none";
-        document.querySelector(".dni-red").style.display = "none";
-    });
-    dateEvent.addEventListener('focus', function () {
-        document.querySelector(".date-red").style.display = "none";
-        document.querySelector(".date-green").style.display = "none";
-    });
-    telEvent.addEventListener('focus', function () {
-        document.querySelector(".tel-red").style.display = "none";
-        document.querySelector(".tel-green").style.display = "none";
-    });
-    addressEvent.addEventListener('focus', function () {
-        document.querySelector(".address-green").style.display = "none";
-        document.querySelector(".address-red").style.display = "none";
-    });
-    locationEvent.addEventListener('focus', function () {
-        document.querySelector(".location-green").style.display = "none";
-        document.querySelector(".location-red").style.display = "none";
-    });
-    codeEvent.addEventListener('focus', function () {
-        document.querySelector(".code-green").style.display = "none";
-        document.querySelector(".code-red").style.display = "none";
-    });
-    mailEvent.addEventListener('focus', function () {
-        document.querySelector(".mail-green").style.display = "none";
-        document.querySelector(".mail-red").style.display = "none";
-    });
-    passwordEvent.addEventListener('focus', function () {
-        document.querySelector('.password-red').style.display = "none";
-        document.querySelector('.password-green').style.display = "none";
-    });
-    secondPasswordEvent.addEventListener('focus', function () {
-        document.querySelector('.repet-green').style.display = "none";
-        document.querySelector('.repet-red').style.display = "none";
-    });
+        // var-input
+        var nameEvent = document.getElementById('name');
+        var lastNameEvent = document.getElementById('lastName');
+        var dniEvent = document.getElementById('dni');
+        var dateEvent = document.getElementById('date');
+        var telEvent = document.getElementById('tel');
+        var addressEvent = document.getElementById('address');
+        var locationEvent = document.getElementById('location');
+        var codeEvent = document.getElementById('code');
+        var mailEvent = document.getElementById('mail');
+        var passwordEvent = document.getElementById('password');
+        var secondPasswordEvent = document.getElementById('repet');
+        // blur
+        nameEvent.addEventListener('blur', validateName);
+        lastNameEvent.addEventListener('blur', validateLastName);
+        dniEvent.addEventListener('blur', validateDni);
+        dateEvent.addEventListener('blur', validateDate);
+        telEvent.addEventListener('blur', validateTel);
+        addressEvent.addEventListener('blur', validateAddress);
+        locationEvent.addEventListener('blur', validateLocation);
+        codeEvent.addEventListener('blur', validatePostalCode);
+        mailEvent.addEventListener('blur', validateEmail);
+        passwordEvent.addEventListener('blur', validatePassword);
+        secondPasswordEvent.addEventListener('blur', validateRepetPassword);
+
+        //focus
+        nameEvent.addEventListener('focus', function () {
+            document.querySelector('.name-red').style.display = "none";
+            document.querySelector('.name-green').style.display = "none";
+        });
+        lastNameEvent.addEventListener('focus', function () {
+            document.querySelector('.lastname-red').style.display = "none";
+            document.querySelector('.lastname-green').style.display = "none";
+        })
+        dniEvent.addEventListener('focus', function () {
+            document.querySelector(".dni-green").style.display = "none";
+            document.querySelector(".dni-red").style.display = "none";
+        });
+        dateEvent.addEventListener('focus', function () {
+            document.querySelector(".date-red").style.display = "none";
+            document.querySelector(".date-green").style.display = "none";
+        });
+        telEvent.addEventListener('focus', function () {
+            document.querySelector(".tel-red").style.display = "none";
+            document.querySelector(".tel-green").style.display = "none";
+        });
+        addressEvent.addEventListener('focus', function () {
+            document.querySelector(".address-green").style.display = "none";
+            document.querySelector(".address-red").style.display = "none";
+        });
+        locationEvent.addEventListener('focus', function () {
+            document.querySelector(".location-green").style.display = "none";
+            document.querySelector(".location-red").style.display = "none";
+        });
+        codeEvent.addEventListener('focus', function () {
+            document.querySelector(".code-green").style.display = "none";
+            document.querySelector(".code-red").style.display = "none";
+        });
+        mailEvent.addEventListener('focus', function () {
+            document.querySelector(".mail-green").style.display = "none";
+            document.querySelector(".mail-red").style.display = "none";
+        });
+        passwordEvent.addEventListener('focus', function () {
+            document.querySelector('.password-red').style.display = "none";
+            document.querySelector('.password-green').style.display = "none";
+        });
+        secondPasswordEvent.addEventListener('focus', function () {
+            document.querySelector('.repet-green').style.display = "none";
+            document.querySelector('.repet-red').style.display = "none";
+        });
 
 }
